@@ -1,0 +1,13 @@
+src.convertTo(dst, CV_8UC1)这个函数，只能进行depth的转换，不能转换通道。
+
+例如src是CV_8UC3,执行上面这个函数之后的dst，依然是CV_8UC3，而不会变为CV_8UC1，注意，此时仅为数据截断。
+CV_16U->CV_8U dst.convertTo(src, CV_8U, 1/257.0) ，这里使用257而不是256是为了结果<=255保障不越界
+
+四、要改变通道数，要使用 cv::cvtColor(src, dst, COLOR_BGR2GRAY);   3通道就转化成了单通道
+Mat_<uchar>---------CV_8U
+Mat<char>-----------CV_8S
+Nat_<short>---------CV_16S
+Mat_<ushort>--------CV_16U
+Mat_<int>-----------CV_32S
+Mat_<float>----------CV_32F
+Mat_<double>--------CV_64F
