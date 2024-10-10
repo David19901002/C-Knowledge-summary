@@ -1,0 +1,5 @@
+Git操作说明：
+1、git push origin --delete fuq/test0125    删除远程分支
+2、git branch -d fuq/test0125    删除本地分支
+3、git merge 分支名 --squash   合并分支修改，------ git commit -m "修改合并"     commit号合并成1个
+git push origin -d test    、、删除远程分支
